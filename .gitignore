@@ -11,3 +11,4 @@ lib64
 .idea
 *.sqlite3
 *.pyc
+static/photos/*

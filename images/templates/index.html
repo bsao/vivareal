@@ -1,1 +1,32 @@
-testing templates
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Viva Real - Test</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="/static/js/realty.js"></script>
+    <script src="/static/js/realty_rest_api.js"></script>
+</head>
+<body ng-app="realty" ng-controller="MyCtrl">
+<div class="container" ng-init="load()">
+    <h1>Imóveis</h1>
+
+    <div ng-show="realties.length > 0">
+        <table class="table-pics table table-striped table-bordered">
+            <tr>
+                <th class="cell-img">Imagem</th>
+                <th>Descrição</th>
+            </tr>
+            <tr ng-repeat="realty in realties">
+                <td><img ng-src="{$ realty.image $}" class="thumb40" alt="{$ realty.description $}"></td>
+                <td ng-bind="realty.description"></td>
+            </tr>
+        </table>
+    </div>
+    <div ng-show="realties.length == 0" class="">
+        Nenhum imovel encontrado.
+    </div>
+</div>
+</body>
+</html>

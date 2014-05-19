@@ -9,3 +9,5 @@ src/*.egg-info
 lib
 lib64
 .idea
+*.sqlite3
+*.pyc

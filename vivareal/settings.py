@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -36,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'images'
+    'images',
+    'rest_framework'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -52,6 +54,7 @@ ROOT_URLCONF = 'vivareal.urls'
 
 WSGI_APPLICATION = 'vivareal.wsgi.application'
 
+REST_FRAMEWORK = {}
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases

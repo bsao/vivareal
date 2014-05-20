@@ -23,3 +23,19 @@ class ImageTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(response.data['id'], 1)
         self.assertEqual(response.data['description'], 'text of description')
+
+    def test_delete_image(self):
+        response = self._create_image()
+        response = self.client.delete('/images/%s/' % response.data['id'], format='json')
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+    def test_img_not_found(self):
+        response = self.client.get('/images/1000000/', format='json')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_get_img_by_id(self):
+        response = self._create_image()
+        response = self.client.get('/images/%s/' % response.data['id'], format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data['id'], 1)
+        self.assertEqual(response.data['description'], 'text of description')

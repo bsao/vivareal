@@ -15,4 +15,5 @@ urlpatterns = patterns(
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^images/$', rest_views.ImagesList.as_view()),
+    url(r'^images/(?P<pk>[0-9]+)/$', rest_views.ImagesDetail.as_view()),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

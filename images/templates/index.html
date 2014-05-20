@@ -14,13 +14,30 @@
 <div class="container" ng-init="load()">
     <h1>Imóveis</h1>
 
+    <div class="col-sm-6 col-md-3" ng-show="selected_realty">
+        <div class="thumbnail">
+            <img ng-src="{$ selected_realty.image $}"
+                 alt="{$ selected_realty.description $}">
+        </div>
+        <div class="caption">
+            <h3>Imóvel: {$ selected_realty.id $}</h3>
+
+            <p><span ng-bind="selected_realty.description"></span></p>
+
+            <p>
+                <a href="#" class="btn btn-primary" role="button" ng-click="selected_realty=null">Fechar</a>
+            </p>
+        </div>
+    </div>
+
+
     <div ng-show="realties.length > 0">
         <table class="table-pics table table-striped table-bordered">
             <tr>
                 <th class="cell-img">Imagem</th>
                 <th>Descrição</th>
             </tr>
-            <tr ng-repeat="realty in realties">
+            <tr ng-repeat="realty in realties" ng-click="select(realty.id)">
                 <td><img ng-src="{$ realty.image $}" class="thumb40" alt="{$ realty.description $}"></td>
                 <td ng-bind="realty.description"></td>
             </tr>

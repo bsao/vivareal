@@ -21,10 +21,16 @@ execute tests
 ==============
 python manage.py test
 
+
 access admin
 ==============
+- python manage.py runserver
 - http://localhost:8000/admin/
 - insert some images and descriptions
+
+access front end tests
+==============
+- http://localhost:8000/tests/
 
 test rest api
 ==============

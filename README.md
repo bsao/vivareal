@@ -1,33 +1,30 @@
 setup
 ==============
 
-install python 2.7
-clone code
+- install python 2.7
+- clone code
 
 execute pip commands
 ==============
 
-pip install django
-pip install djangorestframework
-pip install markdown
-pip install django-filter
+- pip install django
+- pip install djangorestframework
+- pip install markdown
+- pip install django-filter
 
 sync db
 ==============
-python manage.py syncdb
-
-create a admin user/password
+- python manage.py syncdb
+- create a admin user/password
 
 execute tests
 ==============
-
 python manage.py test
 
 access admin
 ==============
-http://localhost:8000/admin/
-
-insert some images and descriptions
+- http://localhost:8000/admin/
+- insert some images and descriptions
 
 test rest api
 ==============
